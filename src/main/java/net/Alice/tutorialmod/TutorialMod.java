@@ -1,6 +1,7 @@
 package net.Alice.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.Alice.tutorialmod.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -13,12 +14,12 @@ import org.slf4j.Logger;
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(TutorialMod.MOD_ID)
 public class TutorialMod {
-//test command
     public static final String MOD_ID = "tutorialmod";
-
     private static final Logger LOGGER = LogUtils.getLogger();
     public TutorialMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
