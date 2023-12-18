@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "tutorialmod:zircon_ore",
+    "tutorialmod:deepslate_zircon_ore",
+    "tutorialmod:nether_zircon_ore",
+    "tutorialmod:end_zircon_ore",
+    "tutorialmod:zircon_block"
+  ]
+}
