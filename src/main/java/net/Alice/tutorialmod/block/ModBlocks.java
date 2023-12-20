@@ -2,6 +2,7 @@ package net.Alice.tutorialmod.block;
 
 import com.mojang.blaze3d.shaders.Uniform;
 import net.Alice.tutorialmod.TutorialMod;
+import net.Alice.tutorialmod.block.custom.JumpyBlock;
 import net.Alice.tutorialmod.item.ModCreativeModeTab;
 import net.Alice.tutorialmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -44,6 +45,10 @@ public class ModBlocks {
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(3, 7)), ModCreativeModeTab.TUTORIAL_TAB_0);
+
+    public static final RegistryObject<Block> JUMPY_BLOCK = registerBlock("jumpy_block",
+            () -> new JumpyBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TUTORIAL_TAB_0);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
